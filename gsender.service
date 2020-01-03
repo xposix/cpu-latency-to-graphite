@@ -1,0 +1,9 @@
+[Unit]
+Description=Graphite sender script
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/gsender/gsender.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
