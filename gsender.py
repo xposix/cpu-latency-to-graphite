@@ -68,8 +68,8 @@ for stdout_line in iter(popen.stdout.readline, ""):
         else:
             if timer >= sending_frequency:
                 for bucket, values in bucket_values.items():
-                    graphyte.send(bucket, mean(values))
-                    logger.info("Sent! => bucket: {} value: {:.1f}".format(bucket,mean(values)))
+                    graphyte.send(bucket, int(mean(values)))
+                    logger.info("Sent! => bucket: {} value: {}".format(bucket,int(mean(values))))
                 timer = 0
                 bucket_values = {}
     except Exception as e:
